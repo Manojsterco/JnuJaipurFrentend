@@ -1,0 +1,3069 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-IN">
+<head>
+  <title>Best Private University in Rajasthan | JNU University Jaipur</title>
+<meta name="description" content="Jaipur National University is one of the best private universities in Rajasthan. A UGC-approved university in Rajasthan, it offers a leading-edge infrastructure." />
+<meta name="keywords" content="rajasthan university of jaipur, phd university in jaipur, jaipur university college, private university in jaipur, private universities in jaipur, university of technology jaipur, global education, university of jaipur, university in jaipur, universities in jaipur, Best Universities in Rajasthan, best university in jaipur, private universities in rajasthan, top colleges in jaipur" />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url"  content="https://www.jnujaipur.ac.in/" />
+<meta property="og:title"  content="Best Private University in Rajasthan | JNU University Jaipur" />
+<meta property="og:description"  content="Jaipur National University is one of the best private universities in Rajasthan. A UGC-approved university in Rajasthan, it offers a leading-edge infrastructure.
+
+" />
+<meta property="og:image" content="">
+<!-- Twitter -->
+<meta property="twitter:card"  content="summary_large_image" />
+<meta property="twitter:url"  content="https://www.jnujaipur.ac.in/" />
+<meta property="twitter:title"  content="Best Private University in Rajasthan | JNU University Jaipur" />
+<meta property="twitter:description"  content="Jaipur National University is one of the best private universities in Rajasthan. A UGC-approved university in Rajasthan, it offers a leading-edge infrastructure.
+
+" />
+<meta property="twitter:image" content="" />
+<link rel="canonical" href="https://www.jnujaipur.ac.in/" />
+<meta name="robots" content="index, follow">
+
+<meta charset="utf-8" />
+<link rel="shortcut icon" href="images/jnu-icon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no" />
+<meta name="google-site-verification" content="z3RK5fU2R63Dqnk9bXu0Fs0zx4SOhVnvRDxkJwhqrCk" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<!--Prelad Active-->
+<link rel="preload" href="css/bootstrap.min.css" as="style" />
+<link rel="preload" href="css/owl.carousel.min.css" as="style" />
+<link rel="preload" href="css/animate.css" as="style" />
+<link rel="preload" href="css/style.css" as="style" />
+<link rel="preload" href="css/responsive.css" as="style" />
+<link rel="preload" href="css/dynamic.css" as="style" />
+
+<!--------plugin css------>
+<link href="css/bootstrap.min.css" rel="stylesheet" media="all" />
+<link href="css/owl.carousel.min.css" rel="stylesheet" media="all" />
+<link rel="stylesheet" href="css/animate.css" media="all" />
+<link rel="stylesheet" href="css/style.css" media="all" />
+<link rel="stylesheet" href="css/responsive.css" media="all" />
+<link href="css/dynamic.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+ 
+<form name="form1"  onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+  <style>
+ul.wordWheel
+{
+	background-color: #fff;
+	text-align: left;
+	overflow-y: scroll;
+	font-size: 12px;
+	color: #000;
+	vertical-align: top;
+	margin: 0;
+	height: 250px;
+	padding: 0;
+    border: 1px solid #dedede;
+	cursor: pointer;
+	    position: absolute;
+    width: 100%;
+    z-index: 1;
+    top:100%;
+}
+ul.wordWheel li
+{
+	list-style: none;
+	padding:8px 10px;
+	margin: 0;
+	    border-bottom: 1px solid #dedede;
+		-webkit-transition: all 0.32s ease-out;
+    -moz-transition: all 0.32s ease-out;
+    -o-transition: all 0.32s ease-out;
+    transition: all 0.32s ease-out;
+}
+ul.wordWheel li:hover
+{
+	background: #DE0B5C;
+	color: #000;
+}
+
+</style>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+  <script type="text/javascript">
+       $(document).ready(function () {
+           $('.close').click(function () {
+               $("#clearmySound").attr('src', '');
+           });
+           $('.txtsearch1').keyup(function () {
+               GetGraduateCourse();
+           });
+           $('html').click(function () {
+               $("#courselist").attr("style", "display:none");
+           });
+       });
+       function graduate(e) {
+           $("#coursesearch").val(e.text())
+           $("#courselist").attr("style", "display:none");
+       }
+
+       function SearchTerm() {
+           return jQuery.trim($("[id*=coursesearch]").val());
+       };
+       function GetGraduateCourse() {
+           $.ajax({
+               type: "POST",
+               url: "/index.aspx/getgraduatecourse",
+               data: '{prefixText: "' + SearchTerm() + '"}',
+               contentType: "application/json; charset=utf-8",
+               dataType: "json",
+               success: OnSuccess,
+               failure: function (response) {
+
+               },
+               error: function (response) {
+                  // alert("Error : " + response.d);
+               }
+           });
+       }
+       var row;
+       function OnSuccess(response) {
+           var row = 0;
+           var xmlDoc = $.parseXML(response.d);
+           var xml = $(xmlDoc);
+           var customers = xml.find("Customers");
+           if (customers.length > 0) {
+               $("#courselist").removeAttr("style");
+               $('#courselist li').remove();
+               $.each(customers, function () {
+                   row = row + 1;
+                   var list = $("#courselist");
+                   list.append('<li onClick="graduate($(this))" id="' + row + '" >' + $(this).find("coursename").text() + '</li>');
+               });
+           }
+           else {
+               $('#courselist li').remove();
+               $("#courselist").removeAttr("style");
+               var list = $("#courselist");
+               list.append('<li id="' + row + '" >There are no programmes found.</li>');
+
+           }
+       };
+   </script>
+
+  <div class="overlay-black"> </div>
+  <div class="home-page">
+  
+
+<div class="search-box">
+  <section class="searchoverlay" style="display: none;">
+    <div class="closesearch"> <img src="images/cross.svg" alt="Cross Icon" class="img-fluid hide_search"></div>
+    <div class="searchform">
+      <div id="mainmenu_Panel1" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;mainmenu_LinkButton1&#39;)">
+	
+        <div class="search-box_jnu">
+          <input name="mainmenu$txtsearch" type="text" id="mainmenu_txtsearch" class="query" placeholder="Enter Search Query..." />
+          <div class="search">
+            <a id="mainmenu_LinkButton1" href="javascript:__doPostBack(&#39;mainmenu$LinkButton1&#39;,&#39;&#39;)"> <img src="images/serch-icon-w.svg" class="img-fluid" alt="Search Icon"></a>
+          </div>
+        </div>
+        
+</div>
+    </div>
+  </section>
+</div>
+
+
+<header class="main-section scrolling-navbar" id="mainNav">
+<div class="container-fluid">
+<div class="wed-logo mainlogo_withnaac">
+   <a href="/" class="main_logo"> 
+    <img src="images/jnu-logo.png" alt="Jaipur National University" class="desktop-logo"> 
+    <img src="images/m-jnu-logo.png" alt="Jaipur National University" class="mobile-logo"> 
+  </a>
+</div>
+    <div class="main-menu">
+    <div class="whatsupicon">
+    <span class="about-menu apply_btn wp-icon1">
+      <a href="javascript:void(0)" target="_blank" class="mm-arr applyOnline wp-icon whatsapp">
+        <img alt="whats app" src="images/whatsapp.svg">
+      </a> 
+    </span>
+      <ul class="wpicon">
+            <li class="drop-down_menu about-menu ">
+              <a href="javascript:void(0)" class="mm-arr Admissions-menu"> Admissions <b> 2024</b></a>
+              <div class="mm-pos">
+                <div class="about-mm m-menu">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-4 admision-panel">
+                         <a href="javascript:void(0)"> 
+                          <img src="Uploads/banner/10pbanner_phd-programme.webp" class="img-fluid" alt="Admission" /> 
+                        </a>
+                      </div>
+                      <div class="col-md-8 admission-information">
+                        <div class="row">
+                          <div class="col-md-4 adm-1">
+                            <ul>
+                              <li><a href="javascript:void(0)">Important Dates</a></li>
+                              <li><a href="javascript:void(0)">International admissions</a></li>
+                              <li><a href="javascript:void(0)">Lateral Entry</a></li>
+                              <li><a href="javascript:void(0)">Campus Visit</a></li>
+                              <li><a href="javascript:void(0)">Anti-Ragging</a></li>
+                              <li><a href="javascript:void(0)">FAQs</a> </li>
+                              <li><a href="javascript:void(0)">Downloads</a></li>
+                              <li><a href="javascript:void(0)">Scholarships and Financial Assistance</a></li>
+                              <li><a href="javascript:void(0)">JEST 2024</a></li>
+                          </ul>
+                          <div class="help-desk"> 
+                            <a href="javascript:void(0)"> 
+                            <img class="img-fluid lozad" alt="Admission HelpDesk" src="images/admission-icon.svg">Admission HelpDesk</a>
+                        </div>
+                          </div>
+                          <div class="col-md-8 call-free">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <h2> Call Tollfree</h2>
+                                    <p> <a href="tel:1800-102-1900" class="landline">1800-102-1900</a></p>
+                                    <h2 class="mt-5"> Landline</h2>
+                                    <p> <a href="tel:0141-3127028" class="landline">0141-3127028</a></p>
+                                </div>
+                                <div class="col-md-7">
+                                    <h2> Mail</h2>
+                                    <p> <a href="mailto:admissions@jnujaipur.ac.in" class="admissions_email">admissions@jnujaipur.ac.in</a> </p>
+                                </div>
+                                <div class="col-md-12 admission-noti">
+                                    <h2> Notifications</h2>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0)">Joint Entrance Cum Scholarship Test (JEST) </a>
+                                        </li>
+                                    </ul>
+                                    <div class="apply_online_sec d-block">
+                                        <div class="apply_online_sec_first">
+                                            <div class="apply-online mt-4">
+                                                 <a href="javascript:void(0)">Apply Online</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+            </li>
+          
+            
+            
+            
+            <li id="mainmenu_rptrMenu_ctl01_divli" class="drop-down_menu about-menu "><a href="programmes/ug-programmes" id="mainmenu_rptrMenu_ctl01_anchlink" class="mm-arr"> Academics</a>
+              <div class="mm-pos">
+                <div class="about-mm m-menu">
+                  
+                  
+                  <div id="mainmenu_rptrMenu_ctl01_divAcademics" class="m-menu-inn">
+                    <div class="container-fluid">
+                      <div class="academic-panel">
+                        <div class="row">
+                          <div class="col-md-4 academic-text">
+                            <p> Get a new experience at Jaipur National University as you learn
+                              and connect with people from all over the world</p>
+                            <div class="counter-list">
+                              <ul>
+                                <li>
+                                  <h4> 450<b>+</b></h4>
+                                  <p> Renowned teaching Faculty</p>
+                                </li>
+                                <li>
+                                  <h4> 80<b>+</b></h4>
+                                  <p> Programme to choose from</p>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="top-course1">
+                                  <ul>
+                                    
+                                        <li><a href="javascript:void(0)">UG Programmes</a></li>
+                                      
+                                        <li><a href="javascript:void(0)">PG Programmes</a></li>
+                                      
+                                        <li><a href="javascript:void(0)">Doctoral  Programmes</a></li>
+                                      
+                                        <li><a href="javascript:void(0)">Diploma</a></li>
+                                      
+                                  </ul>
+                                  <div class="col-md-12 pl-0 pr-0">
+                                    <div class="school-box">
+                                      <h3> Schools</h3>
+                                      <ul>
+                                        
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl00_anch">School of Engineering & Technology</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl01_anch">School of Business & Management</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl02_anch">School of Computer & Systems Sciences</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl03_anch">School of Education</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl04_anch">School of Hotel Management & Catering Technology</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl05_anch">School of Languages, Literature and Society</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl06_anch">School of Social Sciences</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl07_anch">School of Life & Basic Sciences</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl08_anch">School of Pharmaceutical Sciences</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl09_anch">School of Media Studies</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl10_anch">School of Fashion Design</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl11_anch">Seedling School of Law and Governance</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl12_anch">Seedling School of Nursing</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl13_anch">School of Allied Health Sciences</a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl14_anch">School of Agricultural Sciences </a></li>
+                                            
+                                            
+                                          
+                                            <li><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repschool_ctl15_anch">Jaipur National University Institute for Medical Sciences and Research Centre</a></li>
+                                            
+                                            
+                                          
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="top-course2">
+                                  
+                                  
+                                  <ul id="mainmenu_rptrMenu_ctl01_divlevel1">
+                                    
+                                        
+                                        
+                                        
+                                        <li id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl00_licoll"><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl00_anchlink">Faculty</a>
+                                          <ul id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl00_divlevel2" class="collab">
+                                            
+                                          </ul>
+                                        </li>
+                                      
+                                        
+                                        
+                                        
+                                        <li id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl01_licoll"><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl01_anchlink">Administration Staff</a>
+                                          <ul id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl01_divlevel2" class="collab">
+                                            
+                                          </ul>
+                                        </li>
+                                      
+                                        
+                                        
+                                        
+                                        <li id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl02_licoll"><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl02_anchlink">E-Resources Developed by JNU Faculty</a>
+                                          <ul id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl02_divlevel2" class="collab">
+                                            
+                                          </ul>
+                                        </li>
+                                      
+                                        
+                                        
+                                        
+                                        <li id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl03_licoll"><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl03_anchlink">Committees & Cells</a>
+                                          <ul id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl03_divlevel2" class="collab">
+                                            
+                                          </ul>
+                                        </li>
+                                      
+                                        
+                                        
+                                        
+                                        <li id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl04_licoll"><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl04_anchlink">Research & Publications</a>
+                                          <ul id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl04_divlevel2" class="collab">
+                                            
+                                          </ul>
+                                        </li>
+                                      
+                                        
+                                        
+                                        
+                                        <li id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl05_licoll"><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl05_anchlink">Pedagogy</a>
+                                          <ul id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl05_divlevel2" class="collab">
+                                            
+                                          </ul>
+                                        </li>
+                                      
+                                        
+                                        
+                                        
+                                        <li id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl06_licoll"><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl06_anchlink">Online Study Support Material For Students</a>
+                                          <ul id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl06_divlevel2" class="collab">
+                                            
+                                          </ul>
+                                        </li>
+                                      
+                                        
+                                        
+                                        
+                                        <li id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl07_licoll"><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl07_anchlink">Code of Conduct</a>
+                                          <ul id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl07_divlevel2" class="collab">
+                                            
+                                          </ul>
+                                        </li>
+                                      
+                                        
+                                        
+                                        
+                                        <li id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl08_licoll"><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl08_anchlink">Academic Calendar</a>
+                                          <ul id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl08_divlevel2" class="collab">
+                                            
+                                          </ul>
+                                        </li>
+                                      
+                                        
+                                        
+                                        
+                                        <li id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl09_licoll" class="col_li"><a id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl09_anchlink">Collaborative Programme</a>
+                                          <ul id="mainmenu_rptrMenu_ctl01_repacademicinnerl1_ctl09_divlevel2" class="collab">
+                                            
+                                          </ul>
+                                        </li>
+                                      
+                                  </ul>
+                                  
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </li>
+          
+            
+            
+            
+            <li id="mainmenu_rptrMenu_ctl02_divli" class="drop-down_menu about-menu "><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_anchlink" class="mm-arr"> Life @ JNU</a>
+              <div class="mm-pos">
+                <div class="about-mm m-menu">
+                  
+                  
+                  
+                  <div id="mainmenu_rptrMenu_ctl02_divlifejnu" class="m-menu-inn">
+                    <div class="container-fluid">
+                      <div class="life-at">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="lefe-at1">
+                              <p> To create an environment of &#39;home away from home&#39;, University has taken initiatives to design and plan the rooms of the hostels in the most comfortable manner.</p>
+                              <div class="campus-view menu_deeg">
+                                <div class="campus_img"> <a class="p-0" href="javascript:void(0)"><img class="w-hover img-fluid" src="images/number-icon1.png" alt="Number"> </a></div>
+                                <a href="javascript:void(0)">360º Walk through</a></div>
+                              <!--<div class="apply-online virtual_tour w-75"><a href="/virtual-tour/sadtm-campus.html" target="_blank">360&deg; Virtual Tour</a></div>-->
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <div class="row">
+                              
+                                  
+                                  
+                                  
+                                  
+                                  <div class="col-md-3">
+                                    <div class="life-text2">
+                                      <h2> Nourish your MIND</h2>
+                                      <div class="img-panel"> <img src="images/21_pic-1.webp" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_img1" class="img-fluid" alt="Image" /> </div>
+                                      <ul>
+                                        
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl00_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl00_anchlink">Classrooms</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl01_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl01_anchlink">Laboratories</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl02_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl02_anchlink">Libraries</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl03_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl03_anchlink">Auditoriums</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl04_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl04_anchlink">Learning Facilities</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl05_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl00_replifinnermenu_ctl05_anchlink">Innovation and Incubation</a></li>
+                                          
+                                      </ul>
+                                    </div>
+                                  </div>
+                                
+                                  
+                                  
+                                  
+                                  
+                                  <div class="col-md-3">
+                                    <div class="life-text2">
+                                      <h2> Feed your SOUL</h2>
+                                      <div class="img-panel"> <img src="images/22_aco.webp" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_img1" class="img-fluid" alt="Image" /> </div>
+                                      <ul>
+                                        
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_replifinnermenu_ctl00_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_replifinnermenu_ctl00_anchlink">Accommodations</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_replifinnermenu_ctl01_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_replifinnermenu_ctl01_anchlink">Cafeteria</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_replifinnermenu_ctl02_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_replifinnermenu_ctl02_anchlink">Student Clubs & Societies</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_replifinnermenu_ctl03_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_replifinnermenu_ctl03_anchlink">Transportation</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_replifinnermenu_ctl04_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl01_replifinnermenu_ctl04_anchlink">Beyond Academics</a></li>
+                                          
+                                      </ul>
+                                    </div>
+                                  </div>
+                                
+                                  
+                                  
+                                  
+                                  
+                                  <div class="col-md-3">
+                                    <div class="life-text2">
+                                      <h2> Sustain your Body</h2>
+                                      <div class="img-panel"> <img src="images/23_pic-3.webp" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl02_img1" class="img-fluid" alt="Image" /> </div>
+                                      <ul>
+                                        
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl02_replifinnermenu_ctl00_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl02_replifinnermenu_ctl00_anchlink">Sports Facilities</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl02_replifinnermenu_ctl01_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl02_replifinnermenu_ctl01_anchlink">Gymnasium</a></li>
+                                          
+                                      </ul>
+                                    </div>
+                                  </div>
+                                
+                                  
+                                  
+                                  
+                                  
+                                  <div class="col-md-3">
+                                    <div class="life-text2">
+                                      <h2> Preserve your Health</h2>
+                                      <div class="img-panel"> <img src="images/24_pic-4.webp" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl03_img1" class="img-fluid" alt="Image" /> </div>
+                                      <ul>
+                                        
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl03_replifinnermenu_ctl00_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl03_replifinnermenu_ctl00_anchlink">Covid Readiness</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl03_replifinnermenu_ctl01_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl03_replifinnermenu_ctl01_anchlink">Medical Help</a></li>
+                                          
+                                            
+                                            
+                                            
+                                            <li id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl03_replifinnermenu_ctl02_divli"> <a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl02_replifemainmenu_ctl03_replifinnermenu_ctl02_anchlink">Health and Safety</a></li>
+                                          
+                                      </ul>
+                                    </div>
+                                  </div>
+                                
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          
+            
+            
+            
+            <li id="mainmenu_rptrMenu_ctl03_divli" class="drop-down_menu about-menu "><a href="javascript:void(0)" id="mainmenu_rptrMenu_ctl03_anchlink" class="mm-arr"> About Us</a>
+              <div class="mm-pos">
+                <div class="about-mm m-menu">
+                  <div class="m-menu-inn">
+	<div class="container-fluid">
+		<div class="about-section">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="about-text">
+						<h2>
+							About the University</h2>
+						<blockquote>
+							Jaipur National University, Jaipur is one of the top self-financed <a href="javascript:void(0)">private university in Rajasthan </a>sponsored by the Mahima Shiksha Samiti.</blockquote>
+						<a class="read-m" href="javascript:void(0)">learn more</a></div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="about-text1">
+								<h3>
+									Accreditation</h3>
+								<p>
+									The UGC, after a thorough inspection by an expert panel of members, accorded its approval to JNU in 2008 under Section 2(f).</p>
+								<a class="read-m" href="javascript:void(0)">learn more</a></div>
+						</div>
+						<div class="col-md-8">
+							<div class="about-text2">
+								<ul>
+									<li>
+										<a href="javascript:void(0)">JNU @ Glance</a></li>
+									<li>
+										<a href="javascript:void(0)">Why JNU?</a></li>
+									<li>
+										<a href="javascript:void(0)">Vision & Mission</a></li>
+									<li>
+										<a href="javascript:void(0)">Mandatory Disclosure</a></li>
+									<li>
+										<a href="javascript:void(0)">Leadership & Management</a></li>
+									<li>
+										<a href="javascript:void(0)">Regulatory Approvals</a></li>
+									<li>
+										<a href="javascript:void(0)">Awards & Achievements</a></li>
+									<li>
+										<a href="javascript:void(0)">IQAC</a></li>
+									<li>
+										<a href="javascript:void(0)">Convocations</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="about-text3">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="img-panel">
+									<img alt="Innovation and Incubation" class="img-fluid" src="images/pic-5.webp" /></div>
+							</div>
+							<div class="col-md-6">
+								<div class="about-text4">
+									<h4>
+										Innovation and Incubation</h4>
+									<p>
+										If you have an innovative idea, we can show you the way ahead. Be an entrepreneur with the perfect..</p>
+									<a class="read-m" href="javascript:void(0)">learn more</a></div>
+							</div>
+							<div class="col-md-6">
+								<div class="img-panel">
+									<img alt="Social Impact/CSR" class="img-fluid" src="images/pic-6.webp" /></div>
+							</div>
+							<div class="col-md-6">
+								<div class="about-text4">
+									<h4>
+										Social Impact/CSR</h4>
+									<p>
+										Social responsibility takes many forms - from providing affordable/free healthcare...</p>
+									<a class="read-m" href="/social-impact-csr">learn more</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<p>
+	 </p>
+
+                  
+                  
+                  
+                </div>
+              </div>
+            </li>
+          
+        <li class="about-menu inform"><a href="javascript:void(0)" class="mm-arr">Information Under<br />Clause B.1.11</a> </li>
+        <li class="about-menu apply_btn"><a  class="mm-arr" href="javascript:void(0)">Contact us</a> </li>
+        <li class="option searchnav" id="show_search"><a href="#" class="showsearch">Search</a></li>
+        
+
+
+
+
+<li class="mobile_menu_sec">
+    <div class="humburger-menu">
+        <div class="mobile_nav group_menu">
+            <a href="javascript:void(0);" class="mobile_nav_icon" aria-label="mobile nav icon"></a>
+            <div class="collapse navbar-collapse main-menu " id="navbarResponsive2">
+                <div id="accordion" class="others-menu">
+                    <ul class="navbar-nav ml-auto">
+                        
+ <li  class="nav-item-mobile only-mobile apply_s mb-2">
+                          <a href="javascript:void(0)" target="_blank">Apply Online for Admission</a>
+                          </li>
+
+                          
+
+
+                        
+
+
+                        
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl00_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl00_divinnermenu1" class="card noplus">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl00_anchlink">Programmes</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl00_divinnermenu2">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl01_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_divinnermenu1" class="card">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl01_anchlink" class="collapsed" data-toggle="collapse" data-target=".submenu8" aria-expanded="false"   aria-controls="collapse-1">Placements</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_divinnermenu2" aria-expanded="false" class="submenu8 collapse" data-parent="#accordion" aria-labelledby="heading-1">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl00_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl00_anchlink">Overview  </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl00_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl01_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl01_anchlink">Placement Activities </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl01_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl02_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl02_anchlink">Corporate Resource Cell </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl02_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl03_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl03_anchlink">Industrial Training & Projects </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl03_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl04_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl04_anchlink">Our Recruiters and Associates </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl04_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl05_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl05_anchlink">Testimonials </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl01_reprightmenuinner1_ctl05_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl02_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_divinnermenu1" class="card">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl02_anchlink" class="collapsed" data-toggle="collapse" data-target=".submenu9" aria-expanded="false"   aria-controls="collapse-1">Happenings</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_divinnermenu2" aria-expanded="false" class="submenu9 collapse" data-parent="#accordion" aria-labelledby="heading-1">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl00_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl00_anchlink">Academic Events </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl00_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl01_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl01_anchlink">Extra Curricular Activities </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl01_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl02_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl02_anchlink">Media Coverage </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl02_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl03_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl03_anchlink">Image Gallery </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl03_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl04_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl04_anchlink">Video Gallery </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl04_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl05_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl05_anchlink">Prints Ads </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl05_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl06_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl06_anchlink">Webinars </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl06_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl07_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl07_anchlink">Industrial Visit </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl02_reprightmenuinner1_ctl07_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl03_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl03_divinnermenu1" class="card">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl03_anchlink" class="collapsed" data-toggle="collapse" data-target=".submenu107" aria-expanded="false"   aria-controls="collapse-1">Student's Corner</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl03_divinnermenu2" aria-expanded="false" class="submenu107 collapse" data-parent="#accordion" aria-labelledby="heading-1">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl03_reprightmenuinner1_ctl00_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl03_reprightmenuinner1_ctl00_anchlink">Student Support </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl03_reprightmenuinner1_ctl00_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl03_reprightmenuinner1_ctl01_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl03_reprightmenuinner1_ctl01_anchlink">Alumni </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl03_reprightmenuinner1_ctl01_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl04_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl04_divinnermenu1" class="card noplus">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl04_anchlink">Testimonials</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl04_divinnermenu2">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl05_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl05_divinnermenu1" class="card noplus">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl05_anchlink" target="_blank">Blog</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl05_divinnermenu2">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl06_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl06_divinnermenu1" class="card noplus">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl06_anchlink">Careers</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl06_divinnermenu2">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl07_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl07_divinnermenu1" class="card noplus">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl07_anchlink">Downloads</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl07_divinnermenu2">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl08_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl08_divinnermenu1" class="card noplus">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl08_anchlink">Online Resources</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl08_divinnermenu2">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl09_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl09_divinnermenu1" class="card noplus">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl09_anchlink">Contact Us</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl09_divinnermenu2">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                                
+                                
+                                
+                                <li id="mainmenu_mobilemenu_reprightmenu1_ctl10_divli" class="nav-item-mobile">
+
+                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_divinnermenu1" class="card">
+
+                            <div class="card-header" id="heading-1">
+                                <h5 class="mb-0">
+                                  <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl10_anchlink" class="collapsed" data-toggle="collapse" data-target=".submenu549" aria-expanded="false"   aria-controls="collapse-1">Radio-JNU 89.6 FM</a>
+                                       
+                                </h5>
+                            </div>
+                            <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_divinnermenu2" aria-expanded="false" class="submenu549 collapse" data-parent="#accordion" aria-labelledby="heading-1">
+                                <div class="card-body">
+                                    <div id="accordion-1">
+
+                                        
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl00_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl00_anchlink">About Us  </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl00_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl01_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl01_anchlink">Programmes </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl01_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl02_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl02_anchlink">Podcast </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl02_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl03_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl03_anchlink">Interviews </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl03_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+                                                  
+                                                  
+                                                  
+                                         
+                                        <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl04_divinnermenu3" class="card noplus">
+                                            <div class="card-header" id="heading-1-1">
+                                                <h5 class="mb-0">
+                                                    <a href="javascript:void(0)" id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl04_anchlink">Events </a>
+                                                </h5>
+                                            </div>
+
+                                           <div id="mainmenu_mobilemenu_reprightmenu1_ctl10_reprightmenuinner1_ctl04_divinnermenu4">
+                                                <div class="card-body">
+                                                    <div id="accordion-1-1">
+                                                 
+
+                                                     
+                                                       
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                          
+
+
+                                             
+                                         
+                                                  
+
+     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                            
+                          <li  class="nav-item-mobile only-mobile">
+                          <a href="javascript:void(0)">Information Under Clause B.1.11</a>
+                          </li>
+                          <li class="nav-item-mobile only-mobile">Collaborative Programme
+                          <ul>
+                          <li><a href="javascript:void(0)" target="_blank" rel="nofollow" class="pt-0 pb-0">ICRI</a></li>
+                         <li><a href="javascript:void(0)" >ImaginXP</a></li>
+                          </ul></li>
+                          
+            <li class="nav-item-mobile only-mobile three_s"><a href="tel:1800-102-1900" class="landline">1800-102-1900</a></li>
+ 							
+                        
+                    </ul>
+                    <div class="contact-link">
+                        <p><a href="javascript:void(0)" class="walk" target="_blank">360º Walk through</a></p>
+                        <p>
+                            <a href="tel:01413127028" class="landline">0141-3127028</a></p>
+                        <p>
+                            <a href="mailto:info@jnujaipur.ac.in" class="mail">info@jnujaipur.ac.in</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+
+      </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--Sticky Left Badge-->
+<!--<a href="https://technorazz.jnujaipur.ac.in/" class="stickyLeft__Badge" role="button" rel="nofollow noopener">
+<span>T</span>
+<span>e</span>
+<span>c</span>
+<span>h</span>
+<span>n</span>
+<span>o</span>
+<span>r</span>
+<span>a</span>
+<span>z</span>
+<span>z</span>
+</a>-->
+  
+  <!--header section end here--> 
+  <!--Home banner section start here-->
+  <section class="banner">
+    
+
+
+
+   <div id="homebanner_divbannervideo" class="owl-carousel owl-carousel1 owl-theme">
+    <div class="item video-item">
+   <div class="home-video">
+     	<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+     	 <source src="images/life_no1.mp4" type="video/mp4">
+          </div>
+         <div class="banner-content">
+         <!--<div class="line">
+			<img alt="Experience Life" src="images/NAAC-A-LOGO.webp" /></div>-->
+ <!-- <div class="line"><img data-src="images/line-yellow.svg" class="lazy" alt="Yellow Line Icon"></div>-->
+ <div class="c-text-box">
+  <span>Experience</span>
+<h2>Life</h2>
+<p>A place which is enriched with holistic cultural growth and Ethics</p>
+</div>
+         <img alt="naac logo" class="naaclogo" src="images/naac-logo-new1.png" />
+</div>
+      </div>
+      
+      <div class="item video-item">
+   <div class="home-video">
+     	<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+     	 <source src="images/academic_no2.mp4" type="video/mp4">
+          </div>
+          <div class="banner-content">
+         <!-- <div class="line">
+			<img alt="Experience Life" src="images/NAAC-A-LOGO.webp" /></div>-->
+      <!--<div class="line"><img data-src="images/line-yellow.svg" class="lazy" alt="Yellow Line Icon"></div>-->
+      <div class="c-text-box">
+      <span>Experience</span>
+    <h2>Learning</h2>
+    <p>Learning to be leaders of tomorrow</p>
+</div>
+         <img alt="naac logo" class="naaclogo" src="images/naac-logo-new1.png" />
+    </div>
+         
+         
+      </div>
+      
+     <div class="item video-item">
+   <div class="home-video">
+     	<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+     	 <source src="images/features_no3.mp4" type="video/mp4">
+          </div>
+           <div class="banner-content">
+          <!-- <div class="line">
+			<img alt="Experience Life" src="images/NAAC-A-LOGO.webp" /></div>-->
+       <!-- <div class="line"><img data-src="images/line-yellow.svg" class="lazy" alt="Yellow Line Icon"></div>-->
+       <div class="c-text-box">
+        <span>Be Future</span>
+      <h2>Ready</h2>
+      <p>Discover your future with JNU</p>
+</div>
+                <img alt="naac logo" class="naaclogo" src="images/naac-logo-new1.png" />
+      </div>
+         
+         
+      </div>
+      
+       
+      
+       
+       
+       
+  
+  </div>
+  
+  
+  
+  </section>
+  
+  <div class="stickySidebar sidebar-home" id="stickySidebar">
+    <div class="stickySidebar__wrapper">
+        <div class="stickySidebar__wrapper--left">
+            <p>Admission Enquiry <!--<span><img src="/distimages/arrow-quick-links.svg" alt=""></span>--></p>
+        </div>
+        <div class="stickySidebar__wrapper--right">
+
+           <div class="npf_wgts" data-height="540px" data-w="5ded3a32deea1415b71e7b6a995e64ae"></div>
+        </div>
+    </div>
+    
+</div>
+
+
+  <!--section 1 start here-->
+  <section class="home-section-1 wow fadeInUp" data-wow-delay=".5s">
+    <div class="container">
+      <blockquote> Get a new experience of your subject at Jaipur National University as you learn
+        and connect with people from all over the world</blockquote>
+      <div class="row">
+        <div class="col-md-6">
+        <div class="desk-owl owl-carousel owl-theme counter-carousel">
+              <div class="item">
+                <div class="key-fact-1 wow fadeInLeft" data-wow-delay=".7s">
+                  <h2> 450+</h2>
+                  <p> Renowned teaching Faculty</p>
+                </div>
+              </div>              
+              <div class="item">
+                <div class="key-fact-1 wow fadeInLeft" data-wow-delay=".8s">
+                  <h2>80+</h2>
+                  <p> Courses to choose from</p>
+                </div>
+              </div>
+              
+            </div>
+        <div class="mob-owl owl-carousel owl-theme counter-carousel">
+              <div class="item">
+                <div class="key-fact-1 wow fadeInLeft" data-wow-delay=".7s">
+                  <h2> 450+</h2>
+                  <p> Renowned teaching Faculty</p>
+                </div>
+              </div>
+             <!--<div class="item">
+                <div class="key-fact-1 wow fadeInLeft" data-wow-delay=".8s">
+                  <div class="key_img"> <img alt="naac logo" class="img-fluid" src="images/nactop_logo.webp"> </div>
+                </div>
+              </div>-->
+              <div class="item">
+                <div class="key-fact-1 wow fadeInLeft" data-wow-delay=".8s">
+                  <h2>80+</h2>
+                  <p> Courses to choose from</p>
+                </div>
+              </div>
+              <!--<div class="item">
+                <div class="key-fact-1 wow fadeInLeft" data-wow-delay=".8s">
+                  <div class="key_img"> <img alt="naac logo" class="img-fluid" src="images/nactop_logo.webp"> </div>
+                </div>
+              </div>-->
+            </div>
+        <!--<div class="owl-carousel owl-theme counter-carousel">
+            <div class="item">
+              <div class="key-fact-1 wow fadeInLeft" data-wow-delay=".7s">
+                 <ul class="key-in">
+                 <li>
+                      <h2> 450+</h2>
+                      <p> Renowned teaching Faculty</p>
+               </li>
+                    <li class="key_img_sec"><img alt="naac logo" class="key_img img-fluid" src="images/nactop_logo.webp"></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item">
+                <div class="key-fact-1 wow fadeInLeft" data-wow-delay=".8s">
+                <ul class="key-in">
+                 <li>
+                      <h2>80+</h2>
+                      <p> Courses to choose from</p>
+               </li>
+                    <li class="key_img_sec"><img alt="naac logo" class="key_img img-fluid" src="images/nactop_logo.webp"></li>
+                  </ul>
+              </div>
+            </div>
+          </div>-->
+        </div>
+        <div class="col-md-6">
+          <div class="programm-sarch wow fadeInLeft" data-wow-delay=".9s">
+            <p> Our practical courses teach you advanced skills with lots of personal support. Search
+              and Apply to be a part of Jaipur National University</p>
+            <div class="input-search txtsearch1">
+              <input name="coursesearch" type="text" id="coursesearch" placeholder="Find Programmes" />
+              <span id="RequiredFieldValidator1" style="color:Red;display:none;"></span>
+              <input type="hidden" name="ValidatorCalloutExtender3_ClientState" id="ValidatorCalloutExtender3_ClientState" />
+              <ul id='courselist' class="wordWheel listMain" style="display:none" onClick="check();">
+              </ul>
+              <a id="LinkButton1" class="btn" href="javascript:void(0)">LinkButton</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="programme-list1">
+        <div class="row">
+          
+              
+              <div id="repproglevel_ctl00_divplevel" class="col  wow fadeInLeft" data-wow-delay="1s">
+                <div class="img-panel"> <a href="javascript:void(0)"> <img src="uploads/smallimages/1lev_fr-ug-pic.webp" id="repproglevel_ctl00_pimg" class="img-fluid" alt="under graduate" loading="lazy" /> </a></div>
+                <div class="programme-list">
+                  <h3> <a href="javascript:void(0)">UG Programmes</a></h3>
+                </div>
+              </div>
+            
+              
+              <div id="repproglevel_ctl01_divplevel" class="col  wow fadeInLeft" data-wow-delay="1.2s">
+                <div class="img-panel"> <a href="javascript:void(0)"> <img src="uploads/smallimages/2lev_fr-pg-pic.webp" id="repproglevel_ctl01_pimg" class="img-fluid" alt="under graduate" loading="lazy" /> </a></div>
+                <div class="programme-list">
+                  <h3> <a href="javascript:void(0)">PG Programmes</a></h3>
+                </div>
+              </div>
+            
+              
+              <div id="repproglevel_ctl02_divplevel" class="col  wow fadeInLeft" data-wow-delay="1.3s">
+                <div class="img-panel"> <a href="javascript:void(0)"> <img src="uploads/smallimages/3lev_other-pic.webp" id="repproglevel_ctl02_pimg" class="img-fluid" alt="under graduate" loading="lazy" /> </a></div>
+                <div class="programme-list">
+                  <h3> <a href="javascript:void(0)">Doctoral  Programmes</a></h3>
+                </div>
+              </div>
+            
+              
+              <div id="repproglevel_ctl03_divplevel" class="col  wow fadeInLeft" data-wow-delay="1.3s">
+                <div class="img-panel"> <a href="javascript:void(0)"> <img src="uploads/smallimages/4lev_other-pic.webp" id="repproglevel_ctl03_pimg" class="img-fluid" alt="under graduate" loading="lazy" /> </a></div>
+                <div class="programme-list">
+                  <h3> <a href="javascript:void(0)">Diploma</a></h3>
+                </div>
+              </div>
+            
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--section 2 start here-->
+  <section class="home-section-2 wow fadeInUp" data-wow-delay=".5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="apply-for">
+            
+            <h2 class="wow fadeInUp" data-wow-delay=".7s"> Apply for admissions 2024 at Jaipur National University</h2>
+            <div class="placement-apply"> <a href="javascript:void(0)" target="_blank">Apply Online</a></div>
+            <h3 class="wow fadeInUp" data-wow-delay=".8s" > Notifications</h3>
+            <div class="owl-carousel owl-theme apply-carousel wow fadeInUp" data-wow-delay=".9s">
+              
+                  
+                  
+                  <div class="item"> <a href="javascript:void(0)" id="rptnotification_ctl00_ank" target="_blank">
+                    <p>
+                      Joint Entrance Cum Scholarship Test (JEST) 
+                    </p>
+                    </a> </div>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="placement-pic  wow fadeInUp" data-wow-delay=".8s"> <img src="images/jnu-hpic1.webp" class="img-fluid" alt="jnu jaipur"><!--<img src="images/jnu-pic1.webp" loading="lazy" class="img-fluid" alt="jnu jaipur">--> </div>
+        </div>
+        <div class="col-md-12">
+          <div class="admission-link wow fadeInUp" data-wow-delay="1.2s">
+            <ul>
+              
+                  
+                  
+                  
+                  <li><a href="javascript:void(0)" id="repinner_ctl00_anchlink">Important Dates</a></li>
+                
+                  
+                  
+                  
+                  <li><a href="javascript:void(0)" id="repinner_ctl01_anchlink">International admissions</a></li>
+                
+                  
+                  
+                  
+                  <li><a href="javascript:void(0)" id="repinner_ctl02_anchlink">Lateral Entry</a></li>
+                
+                  
+                  
+                  
+                  <li><a href="javascript:void(0)" id="repinner_ctl03_anchlink">Campus Visit</a></li>
+                
+                  
+                  
+                  
+                  <li><a href="javascript:void(0)" id="repinner_ctl04_anchlink">Anti-Ragging</a></li>
+                
+                  
+                  
+                  
+                  <li><a href="javascript:void(0)" id="repinner_ctl05_anchlink">FAQs</a></li>
+                
+                  
+                  
+                  
+                  <li><a href="javascript:void(0)" id="repinner_ctl06_anchlink">Downloads</a></li>
+                
+                  
+                  
+                  
+                  <li><a href="javascript:void(0)" id="repinner_ctl07_anchlink">Scholarships and Financial Assistance</a></li>
+                
+                  
+                  
+                  
+                  <li><a href="javascript:void(0)" id="repinner_ctl08_anchlink">JEST 2024</a></li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  <section class="home-section-3 wow fadeInUp" data-wow-delay=".5s">
+<div class="container">
+<div class="row">
+<div class="col-12 col-md-4 pl-1 pr-1">
+<div class="experience wow fadeInleft" data-wow-delay=".3s">
+<h2>
+Experience Campus</h2>
+<p>
+Learn, Why we are proud to say <span> &lsquo;This is JNU&rsquo;</span></p>
+<h3>
+5000+</h3>
+<h5>
+Placement Offers</h5>
+</div>
+</div>
+<div class="col-6 col-md-4 pl-1 pr-1">
+<div class="facilities-box">
+<div class="img-panel">
+<a href="javascript:void(0)"><img alt="Home" class="img-fluid" height="315" loading="lazy" src="images/1183imguf_facility-pic1.webp" width="392" /></a></div>
+<p>
+<a href="javascript:void(0)">Learning Facilities</a></p>
+</div>
+</div>
+<div class="col-6 col-md-4 pl-1 pr-1">
+<div class="facilities-box">
+<div class="img-panel">
+<a href="javascript:void(0)"><img alt="Home" class="img-fluid" height="315" loading="lazy" src="images/1184imguf_facility-pic2.webp" width="392" /></a></div>
+<p>
+<a href="javascript:void(0)">On Campus Facilities</a></p>
+</div>
+</div>
+<div class="col-6 col-md-4 pl-1 pr-1">
+<div class="facilities-box">
+<div class="img-panel">
+<a href="javascript:void(0)"><img alt="Home" class="img-fluid" height="315" loading="lazy" src="images/1185imguf_facility-pic3.webp" width="392" /></a></div>
+<p>
+<a href="javascript:void(0)">Beyond Academics</a></p>
+</div>
+</div>
+<div class="col-6 col-md-4 pl-1 pr-1">
+<div class="facilities-box">
+<div class="img-panel">
+<a href="javascript:void(0)"><img alt="Home" class="img-fluid" height="315" loading="lazy" src="images/1186imguf_innovation_home.webp" width="392" /></a></div>
+<p>
+<a href="javascript:void(0)">Innovation and Incubation</a></p>
+</div>
+</div>
+<div class="col-6 col-md-4 pl-1 pr-1">
+<div class="facilities-box">
+<div class="img-panel">
+<a href="javascript:void(0)"><img alt="Home" class="img-fluid" height="315" loading="lazy" src="images/1249imguf_pic5.webp" width="392" /></a></div>
+<p>
+<a href="javascript:void(0)">Student Clubs &amp; Societies</a></p>
+</div>
+</div>
+</div>
+<div class="mobile-view-panel">
+<div class="row">
+<div class="col-6 col-md-6">
+<h5>
+143</h5>
+<p>
+laboratories</p>
+</div>
+<div class="col-6 col-md-6">
+<h5>
+1500</h5>
+<p>
+Seated Auditorium</p>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="find-out wow fadeInUp" data-wow-delay=".5s">
+<a href="javascript:void(0)">Find out more reasons for studying at JNU</a></div>
+</div>
+</div>
+</div>
+</section>
+<!--section 4 start here-->
+<section class="home-section-4 wow fadeInUp" data-wow-delay=".3s">
+<div class="container">
+<div class="jnu-journey">
+<h2 class="wow fadeInUp" data-wow-delay=".6s">
+Take a journey through our university</h2>
+<p class="wow fadeInUp" data-wow-delay=".7s">
+Jaipur National University, Jaipur, is a Private self-financed University, sponsored by Mahima Shiksha Samiti with more than <strong>125000 students</strong> and around <strong>300</strong><strong>0 faculty</strong> members so far.</p>
+</div>
+<div class="campus-pic wow fadeInUp" data-wow-delay=".9s">
+<div class="img-panel">
+<img alt="Home" class="img-fluid" loading="lazy" src="images/1182imguf_campus-pic1.webp" /></div>
+<div class="campus-des">
+<p>
+One of the largest and best campuses in <span>Rajasthan</span></p>
+</div>
+<div class="campus-view">
+<div class="campus_img">
+<a class="p-0" href="javascript:void(0)" target="_blank"><img alt="Home" class="w-hover img-fluid" loading="lazy" src="images/number-icon1.webp" /> </a></div>
+<a href="javascript:void(0)" target="_blank">360&ordm; Walk through</a></div>
+</div>
+<div class="ranked-section wow fadeInLeft" data-wow-delay="1s">
+<div class="row">
+<div class="col-md-12 wow fadeInRight" data-wow-delay="1.2s">
+<h3>
+International Collaborations</h3>
+<div class="owl-carousel owl-theme International-Collaborations-carousel">
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2602imguf_01.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2603imguf_02.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2604imguf_03.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2605imguf_04.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2606imguf_05.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2607imguf_06.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2608imguf_07.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2609imguf_08.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2610imguf_09.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2611imguf_10.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2612imguf_11.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2613imguf_12.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2614imguf_13.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2615imguf_14.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2616imguf_15.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2617imguf_16.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2618imguf_17.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2619imguf_18.webp" /></div>
+</div>
+<div class="item">
+<div class="img-panel">
+<img alt="Home" loading="lazy" src="images/2620imguf_19.webp" /></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+  
+  <!--section 3 start here--> 
+  
+  <!--section 5 start here-->
+  <section class="home-section-5 wow fadeInUp" data-wow-delay=".5s">
+    <div class="container">
+      <h2 class="wow fadeInUp" data-wow-delay=".7s"> Placements</h2>
+      <p class="wow fadeInUp" data-wow-delay=".9s"> Jaipur National University has an independent Placement Cell to facilitate campus placements and jobs for the students.</p>
+      <div class="row">
+        <div class="col-md-6 wow fadeInLeft d-none" data-wow-delay="1s">
+          <h3> Placement Card</h3>
+          <div class="row">
+	<div class="col-md-4">
+		<img alt="Placements" class="img-fluid img_hgt" loading="lazy" src="images/placement_card.webp" /></div>
+	<div class="col-md-8">
+		<div class="card_placement">
+			<p class="pb-3 mb-0 text-left">
+				JNU offers Privilege Placement Card to its students that assures 100% placement <font face="Arial, sans-serif">assistance</font> and the students who are performing exceptionally good gets chance on campus residential training.</p>
+		</div>
+	</div>
+</div>
+<p>
+	 </p>
+
+        </div>
+        <div class="col-md-12 wow fadeInLeft" data-wow-delay="1s">
+          <h3> Top Placement</h3>
+          <div class="owl-carousel owl-theme placementslide-carousel">
+            
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/178ps_amit_kumar.webp" id="repplacestudent_ctl00_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Amit Kumar </strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> B.Tech. (Computer Science)<br>
+                        Company: Amazon<br>
+                        Package : 27 LPA<br>
+                        Session: 2017-18 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/1569ps_gaurav-meena.webp" id="repplacestudent_ctl01_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Gaurav Meena</strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> Master of Business Administration (MBA)<br>
+                        Company: Byju’S <br>
+                        Package : 12 LPA <br>
+                        Session: 2019-20 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/502ps_amit.webp" id="repplacestudent_ctl02_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Amit Kumar </strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> B.Tech. (Electronics & Communication)<br>
+                        Company: Indian Army<br>
+                        Package : 8.5 LPA<br>
+                        Session: 2017-18 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/717ps_shubham.webp" id="repplacestudent_ctl03_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Shubham </strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> B.Tech. (Mechanical Engineering)<br>
+                        Company: Hinduja Group                                               <br>
+                        Package : 7 LPA<br>
+                        Session: 2018-19 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/1038ps_akshat.webp" id="repplacestudent_ctl04_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Akshat Fageria </strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> Bachelor of Computer Application<br>
+                        Company: Deloitte<br>
+                        Package : 6.5 LPA<br>
+                        Session: 2017-18 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/373ps_pulkit-varshney.webp" id="repplacestudent_ctl05_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Pulkit Varshney </strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> B.Tech. (Computer Science)<br>
+                        Company: LG Electronics<br>
+                        Package : 5.5 LPA<br>
+                        Session: 2019-20 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/2191ps_sidharth-kumar.webp" id="repplacestudent_ctl06_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Sidharth Kumar </strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> B.Tech. (Computer Science)	<br>
+                        Company: Bosch<br>
+                        Package : 5.5 LPA<br>
+                        Session: 2019-20 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/760ps_nidhi-chaubey.webp" id="repplacestudent_ctl07_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Nidhi Chaubey </strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> B.Tech. (Biotechnology)<br>
+                        Company: Medtronic Engineering <br>
+                        Package : 5 LPA<br>
+                        Session: 2018-19 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/1728ps_shagun-yadav.webp" id="repplacestudent_ctl08_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Shagun Yadav</strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> Bachelor of Business Administration (BBA)<br>
+                        Company: IBM<br>
+                        Package : 4.75 LPA<br>
+                        Session: 2019-20 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/2115ps_atuljaiswal.webp" id="repplacestudent_ctl09_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Atul Jaiswal </strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> Bachelor of Pharmacy<br>
+                        Company: Cipla Ltd<br>
+                        Package : 4.5 LPA<br>
+                        Session: 2018-19 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/1268ps_abhishek.webp" id="repplacestudent_ctl10_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Abhishek Mathur</strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> BSC(H&HA)<br>
+                        Company: Hyatt Regency<br>
+                        Package : 4 LPA<br>
+                        Session: 2019-20 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/1072ps_deepanshu.webp" id="repplacestudent_ctl11_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Deepanshu Parnami</strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> Bachelor of Computer Application<br>
+                        Company: Capgemini<br>
+                        Package : 4 LPA<br>
+                        Session: 2018-19 </p>
+                    </div>
+                  </div>
+                </div>
+              
+                
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6"><img src="images/1193ps_shakit-singh-tanwar.webp" id="repplacestudent_ctl12_img1" class="img-fluid" loading="lazy" alt="placement" /></div>
+                    <div class="col-md-6">
+                      <h4 class="pb-3 mb-0 text-left"><strong> Shakit Singh Tanwar</strong> </h4>
+                      <p class="pb-3 mb-0 text-left"> BHMCT<br>
+                        Company: The Oberoi (Rajvilas Jaipur) <br>
+                        Package : 3.5 LPA<br>
+                        Session: 2019-20 </p>
+                    </div>
+                  </div>
+                </div>
+              
+          </div>
+        </div>
+        <div class="col-md-12 pt-5 wow fadeInRight" data-wow-delay="1.1s">
+          <h3> Top Recruiters</h3>
+          <div class="owl-carousel owl-theme placement-carousel">
+	<div class="item">
+		<div class="img-panel">
+			<img alt="Top Recruiters" loading="lazy" src="images/l-18.webp" /></div>
+	</div>
+	<div class="item">
+		<div class="img-panel">
+			<img alt="Top Recruiters" loading="lazy" src="images/l-16.webp" /></div>
+	</div>
+	<div class="item">
+		<div class="img-panel">
+			<img alt="Top Recruiters" loading="lazy" src="images/1667imguf_l-19.webp" /></div>
+	</div>
+	<div class="item">
+		<div class="img-panel">
+			<img alt="Top Recruiters" loading="lazy" src="images/l-22.webp" /></div>
+	</div>
+	<div class="item">
+		<div class="img-panel">
+			<img alt="Top Recruiters" loading="lazy" src="images/l-10.webp" /></div>
+	</div>
+	<div class="item">
+		<div class="img-panel">
+			<img alt="Top Recruiters" loading="lazy" src="images/l-7.webp" /></div>
+	</div>
+	<div class="item">
+		<div class="img-panel">
+			<img alt="Top Recruiters" loading="lazy" src="images/l-8.webp" /></div>
+	</div>
+	<div class="item">
+		<div class="img-panel">
+			<img alt="Top Recruiters" loading="lazy" src="images/l-14.webp" /></div>
+	</div>
+	<div class="item">
+		<div class="img-panel">
+			<img alt="Top Recruiters" loading="lazy" src="images/l-3.webp" /></div>
+	</div>
+	<div class="item">
+		<div class="img-panel">
+			<img alt="Top Recruiters" loading="lazy" src="images/l-13.webp" /></div>
+	</div>
+</div>
+
+        </div>
+        <div class="col-md-12">
+          <p class="view_all"><a href="javascript:void(0)">View All</a></p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  
+  <!--section 6 start here-->
+  <section class="home-section-6">
+    <div class="container">
+      <h2> Research</h2>
+      <div class="row">
+        
+            
+            
+            <div class="col-md-4">
+              <div id="rpttop1researh_ctl00_divresearch" class="bg_research" style="background-image:url(uploads/smallimages/42rch-42rch-ew.webp)"></div>
+              <div class="home_research_details">
+                <p id="rpttop1researh_ctl00_rhead" class="mt-0"><strong>Published:
+                  Jan 2021
+                  </strong></p>
+                <p> Genomic analysis of a novel species Halomonas shambharensis isolated from hypersaline lake in Northwest India</p>
+              </div>
+            </div>
+          
+            
+            
+            <div class="col-md-4">
+              <div id="rpttop1researh_ctl01_divresearch" class="bg_research" style="background-image:url(uploads/smallimages/16rch-16rch-mitosis-3876669_640.webp)"></div>
+              <div class="home_research_details">
+                <p id="rpttop1researh_ctl01_rhead" class="mt-0"><strong>Published:
+                  Nov 2020
+                  </strong></p>
+                <p> The study revealed the biocompatible nature of VN synthesized AgNPs towards MCF-7 and A431 cancer cells and anti-cancer efficacy of doxorubicin when delivered through AgNPs.</p>
+              </div>
+            </div>
+          
+            
+            
+            <div class="col-md-4">
+              <div id="rpttop1researh_ctl02_divresearch" class="bg_research" style="background-image:url(uploads/smallimages/32rch-32rch-credit-card-1730085_640.webp)"></div>
+              <div class="home_research_details">
+                <p id="rpttop1researh_ctl02_rhead" class="mt-0"><strong>Published:
+                  May 2019
+                  </strong></p>
+                <p> Impact of digital banking on financial inclusion: an investigation on youngsters in Rupnagar City, Punjab</p>
+              </div>
+            </div>
+          
+        <div id="rallview" class="col-md-12">
+          <p class="view_all"><a href="javascript:void(0)">View All</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--section 7 start here-->
+  <section class="home-section-7 wow fadeInUp" data-wow-delay=".5s">
+    <div class="container">
+      <h2> Happenings @ JNU</h2>
+      <div class="row">
+        
+            <div id="rpttop1events_ctl00_divetop" class="col-md-4 mb-4"> <a href="javascript:void(0)" id="rpttop1events_ctl00_anchtop" aria-label="Happenings">
+              <div id="rpttop1events_ctl00_divsectop" class="happining-1 top_media_home">
+                <div id="rpttop1events_ctl00_divshadow" class="img-panel shadow_bg bg_cols">
+                  <div id="rpttop1events_ctl00_divimg" class="bg_img_media" style="background-image:url(uploads/smallimages/1256rkh-10th-.webp)"> </div>
+                </div>
+                <div id="rpttop1events_ctl00_divthirdtop" class="happing-content2 top_media_home">
+                  <div class="date">
+                    <h3>14</h3>
+                    <b>Mar/24</b></div>
+                  <p>10th Professor V.S. Mani Memorial International Law Moot Court Competition- 2024</p>
+                  <a href="javascript:void(0)" id="rpttop1events_ctl00_anch" class="read-more">&nbsp;</a> </div>
+              </div>
+              </a> </div>
+            
+            
+          
+            <div id="rpttop1events_ctl01_divetop" class="col-md-4 mb-4"> <a href="javascript:void(0)" id="rpttop1events_ctl01_anchtop" aria-label="Happenings">
+              <div id="rpttop1events_ctl01_divsectop" class="happining-1 top_media_home">
+                <div id="rpttop1events_ctl01_divshadow" class="img-panel shadow_bg bg_cols">
+                  <div id="rpttop1events_ctl01_divimg" class="bg_img_media" style="background-image:url(uploads/smallimages/1476rkh-fdp.webp)"> </div>
+                </div>
+                <div id="rpttop1events_ctl01_divthirdtop" class="happing-content2 top_media_home">
+                  <div class="date">
+                    <h3>11</h3>
+                    <b>Mar/24</b></div>
+                  <p>FDP on  NEP-Outcomes & Challenges</p>
+                  <a href="javascript:void(0)" id="rpttop1events_ctl01_anch" class="read-more">&nbsp;</a> </div>
+              </div>
+              </a> </div>
+            
+            
+          
+            <div id="rpttop1events_ctl02_divetop" class="col-md-4 mb-4"> <a href="javascript:void(0)" id="rpttop1events_ctl02_anchtop" aria-label="Happenings">
+              <div id="rpttop1events_ctl02_divsectop" class="happining-1 top_media_home">
+                <div id="rpttop1events_ctl02_divshadow" class="img-panel shadow_bg bg_cols">
+                  <div id="rpttop1events_ctl02_divimg" class="bg_img_media" style="background-image:url(uploads/smallimages/1350rkh-1281rks-workshop-1.webp)"> </div>
+                </div>
+                <div id="rpttop1events_ctl02_divthirdtop" class="happing-content2 top_media_home">
+                  <div class="date">
+                    <h3>02</h3>
+                    <b>Mar/24</b></div>
+                  <p>Challenges and Opportunities in Agri-Startups</p>
+                  <a href="javascript:void(0)" id="rpttop1events_ctl02_anch" class="read-more">&nbsp;</a> </div>
+              </div>
+              </a> </div>
+            
+            
+          
+            <div id="rpttop1events_ctl03_divetop" class="col-md-4 mb-4"> <a href="javascript:void(0)" id="rpttop1events_ctl03_anchtop" aria-label="Happenings">
+              <div id="rpttop1events_ctl03_divsectop" class="happining-1 top_media_home">
+                <div id="rpttop1events_ctl03_divshadow" class="img-panel shadow_bg bg_cols">
+                  <div id="rpttop1events_ctl03_divimg" class="bg_img_media" style="background-image:url(uploads/smallimages/1477rkh-400-1.jpg)"> </div>
+                </div>
+                <div id="rpttop1events_ctl03_divthirdtop" class="happing-content2 top_media_home">
+                  <div class="date">
+                    <h3>27</h3>
+                    <b>Feb/24</b></div>
+                  <p>National seminar in Hybrid mode on “Fostering Sustainable Entrepreneurship in Youth” </p>
+                  <a href="javascript:void(0)" id="rpttop1events_ctl03_anch" class="read-more">&nbsp;</a> </div>
+              </div>
+              </a> </div>
+            
+            
+          
+            <div id="rpttop1events_ctl04_divetop" class="col-md-4 mb-4"> <a href="javascript:void(0)" id="rpttop1events_ctl04_anchtop" aria-label="Happenings">
+              <div id="rpttop1events_ctl04_divsectop" class="happining-1 top_media_home">
+                <div id="rpttop1events_ctl04_divshadow" class="img-panel shadow_bg bg_cols">
+                  <div id="rpttop1events_ctl04_divimg" class="bg_img_media" style="background-image:url(uploads/smallimages/1478rkh-ipr.webp)"> </div>
+                </div>
+                <div id="rpttop1events_ctl04_divthirdtop" class="happing-content2 top_media_home">
+                  <div class="date">
+                    <h3>20</h3>
+                    <b>Jan/24</b></div>
+                  <p> One day National workshop on Intellectual Property Rights</p>
+                  <a href="javascript:void(0)" id="rpttop1events_ctl04_anch" class="read-more">&nbsp;</a> </div>
+              </div>
+              </a> </div>
+            
+            
+          
+            <div id="rpttop1events_ctl05_divetop" class="col-md-4 mb-4"> <a href="javascript:void(0)" id="rpttop1events_ctl05_anchtop" aria-label="Happenings">
+              <div id="rpttop1events_ctl05_divsectop" class="happining-1 top_media_home">
+                <div id="rpttop1events_ctl05_divshadow" class="img-panel shadow_bg bg_cols">
+                  <div id="rpttop1events_ctl05_divimg" class="bg_img_media" style="background-image:url(uploads/smallimages/1373rkh-dairy-main.webp)"> </div>
+                </div>
+                <div id="rpttop1events_ctl05_divthirdtop" class="happing-content2 top_media_home">
+                  <div class="date">
+                    <h3>05</h3>
+                    <b>Jan/24</b></div>
+                  <p>Department of Food Technology organizing Seminar on Trends in Dairy Technology:  A glimpse into Future of Dairy Industry, Technological Advancements and Emerging Trends </p>
+                  <a href="javascript:void(0)" id="rpttop1events_ctl05_anch" class="read-more">&nbsp;</a> </div>
+              </div>
+              </a> </div>
+            
+            
+          
+        <div class="col-md-12 mobile-view">
+          <div class="event-view"> <a href="/happenings/events">View All Events</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--section 8 start here-->
+  <section class="home-section-8">
+    <div class="container">
+      <h2> <a>JNU Social Wall</a> </h2>
+      <span class="arrow_social"> <a href="javascript:void(0)" target="_blank" rel="nofollow"><img src="images/facebook-icon.svg" class="img-fluid" loading="lazy" alt="facebook"></a> <a href="https://twitter.com/jaipurjnu" target="_blank" rel="nofollow"><img src="images/twitter-icon.svg" class="img-fluid" loading="lazy" alt="twitter"></a> <a href="" target="_blank" rel="nofollow" id="deferYoutube"><img src="images/you-tube-icon.svg" class="img-fluid" loading="lazy" alt="youtube"></a> <a href="https://www.instagram.com/jnujaipuruniversity/" target="_blank" rel="nofollow"><img src="images/instagram-icon.svg" class="img-fluid" loading="lazy" alt="instagram"></a> <a href="https://www.linkedin.com/school/jaipurnationaluniversity/" target="_blank" rel="nofollow"><img src="images/linkdin-icon.svg" class="img-fluid" loading="lazy" alt="linkdin"></a> </span>
+      <div class="wall-box">
+        <div class="row social_wall_sec">
+          <div class="col-md-12">
+            <div class="card-columns colums">
+              
+                  
+                  
+                  
+                  <div class="card"> <a href="javascript:void(0)" id="repsocialwall_ctl00_ank" target="_blank"> <img src="uploads/socialwall/14sw_14sw_reinvent_the_world_of_eduction.webp" id="repsocialwall_ctl00_image1" class="img-fluid" alt="wall image" loading="lazy" />
+                    <div class="card-body">
+                      <div class="social_icon"><img src="images/linkdin-icon.svg" id="repsocialwall_ctl00_simage1" class="img-fluid" alt="linkdin" loading="lazy" /></div>
+                      <div class="social_wall_details">
+                        <p><span>26 - May 2023 <abbr>By Admin</abbr></span> Reinvent the world of education... </p>
+                      </div>
+                    </div>
+                    </a> </div>
+                
+                  
+                  
+                  
+                  <div class="card"> <a href="javascript:void(0)" id="repsocialwall_ctl01_ank" target="_blank"> <img src="uploads/socialwall/12sw_12sw_whatsappimage2023-05-18at11.16.51am.webp" id="repsocialwall_ctl01_image1" class="img-fluid" alt="wall image" loading="lazy" />
+                    <div class="card-body">
+                      <div class="social_icon"><img src="images/facebook-icon.svg" id="repsocialwall_ctl01_simage1" class="img-fluid" alt="linkdin" loading="lazy" /></div>
+                      <div class="social_wall_details">
+                        <p><span>18 - May 2023 <abbr>By Admin</abbr></span> Your dream of higher education in a top institute is now... </p>
+                      </div>
+                    </div>
+                    </a> </div>
+                
+                  
+                  
+                  
+                  <div class="card"> <a href="javascript:void(0)" id="repsocialwall_ctl02_ank" target="_blank"> <img src="uploads/socialwall/11sw_social-wall.webp" id="repsocialwall_ctl02_image1" class="img-fluid" alt="wall image" loading="lazy" />
+                    <div class="card-body">
+                      <div class="social_icon"><img src="images/instagram-icon.svg" id="repsocialwall_ctl02_simage1" class="img-fluid" alt="linkdin" loading="lazy" /></div>
+                      <div class="social_wall_details">
+                        <p><span>14 - May 2023 <abbr>By Admin</abbr></span> Jaipur National University proudly shares some highlights on the event of the Ac... </p>
+                      </div>
+                    </div>
+                    </a> </div>
+                
+                  
+                  
+                  
+                  <div class="card"> <a href="javascript:void(0)" id="repsocialwall_ctl03_ank" target="_blank"> <img src="uploads/socialwall/10sw_twitter-post.webp" id="repsocialwall_ctl03_image1" class="img-fluid" alt="wall image" loading="lazy" />
+                    <div class="card-body">
+                      <div class="social_icon"><img src="images/twitter-icon.svg" id="repsocialwall_ctl03_simage1" class="img-fluid" alt="linkdin" loading="lazy" /></div>
+                      <div class="social_wall_details">
+                        <p><span>01 - May 2023 <abbr>By Admin</abbr></span> Congratulations to the #JNUKnights team for securing 3rd position in the “All India Inter University... </p>
+                      </div>
+                    </div>
+                    </a> </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--------footer------>
+  <footer>
+    
+    <!--<div class="moot-btn">
+<a href="https://www.jnujaipur.ac.in/academic-events/seedling-school-of-law-and-governance/9th-professor-v-s-mani-memorial-international/203/203/954/1/13" target="_blank">International Moot Court Competition-2023</a>
+</div>-->
+    <!--<div class="convo-btn"><a href="/convocation-registration">Convocation 2023</a></div>--> 
+ <div class="apply_btn"> 
+   <div class="ap_btn tyg-glowing">
+  <a href="javascript:void(0)" target="_blank" class="mm-arr applyOnline">Apply Now</a>
+  </div>
+  </div>
+  <div class="apply_btn"> 
+   <div class="ap_btn tyg-glowing tyg-glowing1">
+  <a href="javascript:void(0)" class="applyOnline">Training Partners</a>
+  </div>
+  </div>
+ <div class="footer-link">
+        <div class="container">
+            <ul>
+                <li><a href="javascript:void(0)" target="_blank" class="payfeeonline" rel="nofollow">Pay Fee Online</a></li>
+                <li><a href="javascript:void(0)" target="_blank" class="erp" rel="nofollow">ERP / LMS Login</a></li>
+                <!--<li><a href="https://erp.jnujaipur.ac.in/" target="_blank" class="payfeeonline">Pay Fee Online</a></li> 
+                <li><a href="http://www.naac.gov.in/" target="_blank" class="naac" rel="nofollow">NAAC</a></li>
+                <li><a href="https://nad.gov.in/" target="_blank" class="nad">NAD</a></li>
+                <li><a href="/cpage.aspx?mpgid=509&pgidtrail=509" class="erp">ERP / LMS Login</a></li>-->
+                <li><a href="javascript:void(0)">IQAC</a></li>
+                <li><a href="javascript:void(0)">NIRF</a></li>
+                <li><a href="javascript:void(0)" target="_blank" class="NCTE" rel="nofollow">NCTE</a></li>
+            </ul>
+            <div class="contact-mail">
+                <p><a href="mailto:info@jnujaipur.ac.in" class="mail">info@jnujaipur.ac.in</a></p>
+                <h5><a href="tel:1800-102-1900" class="landline">1800-102-1900</a></h5>
+            </div>
+        </div>
+    </div>
+    <div class="footer-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h3><a href="javascript:void(0)">Admissions</a></h3>
+                    <ul>
+                             <li><a href="javascript:void(0)">Important Dates</a></li>
+                             
+                            <li><a href="javascript:void(0)">Scholarships and Financial Assistance</a></li>
+                            <li><a href="javascript:void(0)">International Admissions</a></li>
+                            <li><a href="javascript:void(0)">Lateral Entry</a></li>
+                            <li><a href="javascript:void(0)">Campus Visit</a></li>
+                            <li><a href="javascript:void(0)">Anti-Ragging</a></li>
+                            <li><a href="javascript:void(0)" target="_blank">Online Document Verification</a></li>
+                            <li><a href="javascript:void(0)">Happenings</a></li>
+                            <li><a href="javascript:void(0)">FAQ's</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h3><a href="javascript:void(0)">Experience Academics</a></h3>
+                    <ul>
+                        <li><a href="javascript:void(0)">Undergraduate</a></li>
+                        <li><a href="javascript:void(0)">Postgraduate</a></li>
+                        <li><a href="javascript:void(0)">Doctoral</a></li>
+                        <li><a href="javascript:void(0)">Diploma & Certificate</a></li>
+                        <li><a href="javascript:void(0)">Faculty</a></li>
+                        <li><a href="javascript:void(0)">Research & Publications</a></li>
+                        <li><a href="javascript:void(0)">Online Resources</a></li>
+                        <li><a href="javascript:void(0)">Radio JNU 89.6 FM</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h3><a href="javascript:void(0)">Experience Life</a></h3>
+                    <ul>
+                        <li><a href="javascript:void(0)">About the University</a></li>
+                        <li><a href="javascript:void(0)">Accreditation</a></li>
+                        <li><a href="javascript:void(0)">Awards & Achievements</a></li>
+                        <li><a href="javascript:void(0)">Mandatory Disclosure</a></li>
+                        <li><a href="javascript:void(0)">Regulatory Approvals</a></li>
+                        <li><a href="javascript:void(0)">Social Impact</a></li>
+                        <li><a href="javascript:void(0)">Life @ JNU</a></li>
+                        <li><a href="javascript:void(0)">Health and Safety</a></li>
+                        <li><a href="javascript:void(0)">Rules & Regulations</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h3><a href="javascript:void(0)">Experience Employability</a></h3>
+                    <ul>
+                        <li><a href="javascript:void(0)">Placement Highlights</a></li>
+                        <li><a href="javascript:void(0)">Placement Activities</a></li>
+                        <li><a href="javascript:void(0)">Industrial Training & Projects</a></li>
+                        <li><a href="javascript:void(0)">Our Recruiters and Associates</a></li>
+                        <!-- <li><a href="/placement.aspx?mpgid=8&pgidtrail=75">Training Programs</a></li>-->
+                        <li><a href="javascript:void(0)">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h3><a href="javascript:void(0)">Other Links</a></h3>
+                    <ul>
+                        <li><a href="javascript:void(0)">Contact Us</a></li>
+                        <li><a href="javascript:void(0)">Online Grievance</a></li>
+                        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)">Disclaimer</a></li>
+                        <li><a href="javascript:void(0)">Terms of Use</a></li>
+                        <li><a href="javascript:void(0)">Sitemap</a></li>
+                    </ul>
+                    <div class="follow-us">
+                        <h3>
+                            Follow Us</h3>
+                        <ul>
+                            <li><a href="javascript:void(0)" target="_blank" rel="nofollow noopener"><img src="images/facebook-icon.svg" alt="Facebook" width="27" height="26"></a></li>
+                            <li><a href="javascript:void(0)" target="_blank" rel="nofollow noopener"><img src="images/footer-twitter-icon.png" alt="Twitter" width="27" height="26"></a></li>
+                            <!-- <li><a href="" target="_blank" rel="nofollow noopener" class="deferurl"><img src="images/you-tube-icon.svg" alt="YouTube" width="27" height="26"></a></li> -->
+                             <li><a href="javascript:void(0)" target="_blank" rel="nofollow noopener" class="deferurl"><img src="images/you-tube-icon.svg" alt="YouTube" width="27" height="26"></a></li>
+                            <li><a href="javascript:void(0)" target="_blank" rel="nofollow noopener"><img src="images/instagram-icon.svg" alt="Instagram" width="26" height="26"></a></li>
+                            <li><a href="javascript:void(0)" target="_blank"rel="nofollow noopener"><img src="images/linkdin-icon.svg" alt="LinkedIn" width="27" height="26"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container clearfix">
+        <p class="btn btn-primary last d-none"> Last Updated on date - 17-08-2024
+        </p>
+        <div class="Copyright">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>Copyright © 2024 Jaipur National University. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="subscribe">
+                        <div id="footer_Panel1" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;footer_lnksubscribe&#39;)">
+	
+                            <input name="footer$txtsubEmail" type="text" id="footer_txtsubEmail" placeholder="Subscribe Newsletter" />
+                            <span id="footer_RequiredFieldValidator1" style="color:Red;display:none;"></span>
+                            <span id="footer_RegularExpressionValidator5" style="color:Red;display:none;">Enter Valid Email.</span>
+                            <input type="hidden" name="footer$ValidatorCalloutExtender9_ClientState" id="footer_ValidatorCalloutExtender9_ClientState" />
+                            <input type="hidden" name="footer$ValidatorCalloutExtender10_ClientState" id="footer_ValidatorCalloutExtender10_ClientState" />
+                            <a id="footer_lnksubscribe" class="footer-btn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;footer$lnksubscribe&quot;, &quot;&quot;, true, &quot;subscribe&quot;, &quot;&quot;, false, true))"> <img src="images/arrow-w.svg"
+                                    alt="arrow-w" width="8" height="13"></a>
+                        
+</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p>Website Design and Development by <a href="javascript:void(0)" target="_blank"> Sterco Digitex</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="mobile-banner-section">
+        <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <a href="https://apply.jnujaipur.ac.in/" target="_blank"> <img alt="Admission" src="https://www.jnujaipur.ac.in/uploads/banner/8pbanner_jnu.webp" class="img-fluid w-100"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#exampleModal6').modal('show');
+        }); 
+    </script> -->
+    <div class="mobhomemodal" id="exampleModal6">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content"> 
+            <div class="modal-body">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><span aria-hidden="true">&times;</span> </button> 
+                <a href="https://apply.jnujaipur.ac.in/" target="_blank"> <img alt="Admission" src="images/phd-programme.webp" class="img-fluid w-100"> </a>
+                   
+            </div>
+          </div>
+        </div>
+      </div>   
+    <div class="mobile_footer_btn">
+        <div class="apply_btn">
+            <span class="text-center"><a href="javascript:void(0)" target="_blank" class="mobile_apply_online">Apply Online</a></span>
+            <span class="text-center"><a href="tel:18001021900" class="mobile_contactus">Call Now</a></span>
+            <span class="border-right-0 text-center"><a data-toggle="modal" data-target="#exampleModal">Admission Enquiry</a></span>
+        </div>
+    </div>
+    <div class="modal fade enquiry-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Admission Enquiry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="npf_wgts" data-height="500px" data-w="5ded3a32deea1415b71e7b6a995e64ae"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" defer>var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = "https://widgets.in5.nopaperforms.com/emwgts.js"; document.body.appendChild(s);</script>
+    <div class="npf_chatbots" data-w="70b3067433a041579e0a303c175da112" style="display:none;"></div>
+    <div class="header-counter">
+        <ul>
+            <li>
+                <p class="mb-0">Admission Closing in</p>
+                <ul class="countdown-dt">
+                    <li><span id="days"></span><div class="smalltext">Days</div></li>
+                    <li><span id="hours"></span><div class="smalltext">Hours</div></li>
+                    <li><span id="minutes"></span><div class="smalltext">Minutes</div></li>
+                    <li><span id="seconds"></span><div class="smalltext">Seconds</div></li>
+                    <li id="timeup" style="display:none;">&nbsp;</li>
+                </ul>
+            </li>
+            <li>Last date of Admission is 15th July 2024</li>
+        </ul>
+    </div>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("July 15, 2024 23:59:59").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+            
+            // Find the distance between now and the count down date
+            var timeup = countDownDate - now;
+            
+            // Time calculations for days, hours, minutes, and seconds
+            var days = Math.floor(timeup / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeup % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeup % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeup % (1000 * 60)) / 1000);
+            
+            // Output the result in elements with ids
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+            
+            // If the count down is over, display "TIME UP"
+            if (timeup <= 0) {
+                clearInterval(x);
+                document.querySelector(".header-counter").classList.remove('show');
+                document.getElementById("timeup").style.display = "inline-block";
+                document.getElementById("timeup").textContent = "TIME UP";
+                document.getElementById("days").textContent = '0';
+                document.getElementById("hours").textContent = '0';
+                document.getElementById("minutes").textContent = '0';
+                document.getElementById("seconds").textContent = '0';
+                document.querySelector(".fixed-top").classList.add("nobar");
+            } else {
+                document.querySelector(".header-counter").classList.add('show');
+                document.querySelector(".fixed-top").classList.remove("nobar");
+                if (window.innerWidth > 991) {
+                    document.querySelector(".fixed-top").style.marginTop = "60px";
+                }
+            }
+        }, 1000);
+    </script>
+    
+    <style>
+        .header-counter {
+            display: none;
+        }
+        .header-counter.show {
+            display: block;
+        }
+        .fixed-top.nobar {
+            margin-top: 0;
+        }
+    </style>
+  </footer>
+
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("RequiredFieldValidator1"), document.getElementById("footer_RequiredFieldValidator1"), document.getElementById("footer_RegularExpressionValidator5"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var RequiredFieldValidator1 = document.all ? document.all["RequiredFieldValidator1"] : document.getElementById("RequiredFieldValidator1");
+RequiredFieldValidator1.controltovalidate = "coursesearch";
+RequiredFieldValidator1.errormessage = "Required";
+RequiredFieldValidator1.display = "None";
+RequiredFieldValidator1.validationGroup = "cs";
+RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidator1.initialvalue = "";
+var footer_RequiredFieldValidator1 = document.all ? document.all["footer_RequiredFieldValidator1"] : document.getElementById("footer_RequiredFieldValidator1");
+footer_RequiredFieldValidator1.controltovalidate = "footer_txtsubEmail";
+footer_RequiredFieldValidator1.errormessage = "Enter E-mail Address.";
+footer_RequiredFieldValidator1.display = "None";
+footer_RequiredFieldValidator1.validationGroup = "subscribe";
+footer_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+footer_RequiredFieldValidator1.initialvalue = "";
+var footer_RegularExpressionValidator5 = document.all ? document.all["footer_RegularExpressionValidator5"] : document.getElementById("footer_RegularExpressionValidator5");
+footer_RegularExpressionValidator5.controltovalidate = "footer_txtsubEmail";
+footer_RegularExpressionValidator5.errormessage = "Enter Valid Email.";
+footer_RegularExpressionValidator5.display = "Dynamic";
+footer_RegularExpressionValidator5.validationGroup = "subscribe";
+footer_RegularExpressionValidator5.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+footer_RegularExpressionValidator5.validationexpression = "\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('RequiredFieldValidator1'));
+}
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ValidatorCalloutBehavior, {"ClientStateFieldID":"ValidatorCalloutExtender3_ClientState","closeImageUrl":"/WebResource.axd?d=kmiDpAbuq_JkONklO5VOPl3--DVx7tT1cxGIibfg38tc0kIgXQaRBJmyhGlUlbCNhZ7BBqgC2yjQq2WLVWKe6OQyOZ3ye5s_lJg2V5qXAoCr31kDXIAWAp6n22xvybeLh5e_tg2\u0026t=634946141620000000","cssClass":"BlockPopup","highlightCssClass":"validatorCalloutHighlight","id":"ValidatorCalloutExtender3","warningIconImageUrl":"/WebResource.axd?d=6_CgL2dBerFekJ8bmPr_RpOd1wsEVqS87ZnujT5EtfXgJCWwho8NYm-lsWqX0O_KtDJKQ8lxMzhP2O6E3y9vgTWQLm38ccD58sFxXMELofseAS3_fWFLrjgeCWuc2v3Lgkdtir0DjQ6w5l92_qqSxgP0RXU1\u0026t=634946141620000000"}, null, null, $get("RequiredFieldValidator1"));
+});
+
+document.getElementById('footer_RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('footer_RequiredFieldValidator1'));
+}
+
+document.getElementById('footer_RegularExpressionValidator5').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('footer_RegularExpressionValidator5'));
+}
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ValidatorCalloutBehavior, {"ClientStateFieldID":"footer_ValidatorCalloutExtender9_ClientState","closeImageUrl":"/WebResource.axd?d=kmiDpAbuq_JkONklO5VOPl3--DVx7tT1cxGIibfg38tc0kIgXQaRBJmyhGlUlbCNhZ7BBqgC2yjQq2WLVWKe6OQyOZ3ye5s_lJg2V5qXAoCr31kDXIAWAp6n22xvybeLh5e_tg2\u0026t=634946141620000000","cssClass":"BlockPopup","highlightCssClass":"validatorCalloutHighlight2","id":"footer_ValidatorCalloutExtender9","warningIconImageUrl":"/WebResource.axd?d=6_CgL2dBerFekJ8bmPr_RpOd1wsEVqS87ZnujT5EtfXgJCWwho8NYm-lsWqX0O_KtDJKQ8lxMzhP2O6E3y9vgTWQLm38ccD58sFxXMELofseAS3_fWFLrjgeCWuc2v3Lgkdtir0DjQ6w5l92_qqSxgP0RXU1\u0026t=634946141620000000"}, null, null, $get("footer_RequiredFieldValidator1"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ValidatorCalloutBehavior, {"ClientStateFieldID":"footer_ValidatorCalloutExtender10_ClientState","closeImageUrl":"/WebResource.axd?d=kmiDpAbuq_JkONklO5VOPl3--DVx7tT1cxGIibfg38tc0kIgXQaRBJmyhGlUlbCNhZ7BBqgC2yjQq2WLVWKe6OQyOZ3ye5s_lJg2V5qXAoCr31kDXIAWAp6n22xvybeLh5e_tg2\u0026t=634946141620000000","cssClass":"BlockPopup","highlightCssClass":"validatorCalloutHighlight2","id":"footer_ValidatorCalloutExtender10","warningIconImageUrl":"/WebResource.axd?d=6_CgL2dBerFekJ8bmPr_RpOd1wsEVqS87ZnujT5EtfXgJCWwho8NYm-lsWqX0O_KtDJKQ8lxMzhP2O6E3y9vgTWQLm38ccD58sFxXMELofseAS3_fWFLrjgeCWuc2v3Lgkdtir0DjQ6w5l92_qqSxgP0RXU1\u0026t=634946141620000000"}, null, null, $get("footer_RegularExpressionValidator5"));
+});
+//]]>
+</script>
+</form>
+
+
+<div class="technorazz">
+  <a href="javascript:void(0)">V.S.MMILMCC-2024</a>
+</div>
+<script type="text/javascript">
+    $(window).on('load', function () {
+        $('#myModal1').modal('show');
+    });
+    setTimeout(function(){
+      $("#deferYoutube").attr("href","javascript:void(0)");
+    },5000);
+</script>
+
+<script src="/js/jquery-3.5.1.min.js" ></script> 
+<script src="js/owl.carousel.min.js"></script> 
+<script src="js/bootstrap.min.js" async></script> 
+<script src="js/wow.min.js" defer></script> 
+<script src="js/script.js" defer></script>
+
+
+<!-- <div style=" border:none;position:fixed;bottom:0.4%;right:1%;z-index: 9999999;">
+  <div class="online-chat" onClick="closeFunction()"> <span class="tooltiptext">How can I help you?</span> <img src="images/char_icon.png" alt="char icon" class="mobile_version"> <img src="images/mgmu-chat-icon.png" alt="mgmu chat icon" class="desktop_version"> </div>
+  <div id="chatbox" class="chat-bot-container" style="display: none">
+    <button type="button" class="close" onClick="closeFunction()">×</button>
+    <iframe src="https://fyiedusoft.com/jnu-chatbot-v1" id="iframe_ids" title="JNU Chatbot" style="display:none; border: 0; width: 370px; height: 590px;"></iframe>
+  </div>
+</div> -->
+</body>
+</html>
+
