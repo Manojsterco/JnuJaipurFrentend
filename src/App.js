@@ -1,16 +1,18 @@
 
-import logo from '../src/Images/jnu-logo.png';
+import Header from './Components/Header/Header';
+import { BrowserRouter } from 'react-router-dom';
 // import './App.css';
-// import '../src/css/style.css';
+import '../src/css/style.css';
+
+import Banner from './Components/Banner/Banner';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />    
-       
-        
-      </header>
+      <BrowserRouter>
+      <Header />
+     </BrowserRouter>
+     <Banner/>
     </div>
   );
 }

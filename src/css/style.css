@@ -274,7 +274,7 @@ li.about-menu.inform {
     text-indent: -9999px;
     width: 45px;
     height: 27px;
-    background: url(../images/serch-icon-w.svg) no-repeat;
+    /* background: url(../images/serch-icon-w.svg) no-repeat; */
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     -ms-transition: all .5s ease;
@@ -318,7 +318,7 @@ header.main-section.fixed-top.scrolling-navbar.top-nav-collapse .wed-logo img {
     background: 0 0;
     min-height: 104px;
     position: fixed;
-    z-index: 99;
+    z-index: 9999;
     transform: translate(0, 0);
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
@@ -737,7 +737,7 @@ li.about-menu.apply_btn a.mm-arr:after {
 }
 .mobile_nav .mobile_nav_icon {
     content: '';
-    background: url(../images/humburger-icon.svg) no-repeat;
+    /* background: url(../images/humburger-icon.svg) no-repeat; */
     width: 29px;
     height: 29px;
     display: inline-block;
@@ -753,7 +753,7 @@ li.about-menu.apply_btn a.mm-arr:after {
 }
 
 .mobile_nav .mobile_nav_icon.open {
-    background: url(../images/cross.svg) no-repeat;
+    /* background: url(../images/cross.svg) no-repeat; */
     width: 32px;
     height: 32px;
     background-position: center
@@ -808,7 +808,7 @@ li.about-menu.apply_btn a.mm-arr:after {
 
 .mobile_nav .navbar-nav .nav-item .add.arrow_icon:after {
     content: "";
-    background: #000 url(../images/icon-sprite1.png) -391px -244px no-repeat;
+    /* background: #000 url(../images/icon-sprite1.png) -391px -244px no-repeat; */
     width: 29px;
     height: 24px;
     display: inline-block;
@@ -826,7 +826,7 @@ li.about-menu.apply_btn a.mm-arr:after {
 }
 
 .mobile_nav .navbar-nav .nav-item .arrow_icon:after {
-    background: #000 url(../images/icon-sprite1.png) -361px -244px no-repeat;
+    /* background: #000 url(../images/icon-sprite1.png) -361px -244px no-repeat; */
     width: 29px;
     height: 24px;
     display: inline-block;
@@ -911,7 +911,7 @@ div#accordion ul.navbar-nav.ml-auto {
 
 header .mobile_nav .main-menu ul li a.submenu.collapsed:before {
     content: "";
-    background: url(../images/plus-icon3.png) no-repeat;
+    /* background: url(../images/plus-icon3.png) no-repeat; */
     width: 25px;
     height: 25px;
     position: absolute;
@@ -922,7 +922,7 @@ header .mobile_nav .main-menu ul li a.submenu.collapsed:before {
 
 header .mobile_nav .main-menu ul li a.submenu:before {
     content: "";
-    background: url(../images/minus-icon1.png) no-repeat;
+    /* background: url(../images/minus-icon1.png) no-repeat; */
     width: 25px;
     height: 25px;
     position: absolute;
@@ -1294,7 +1294,7 @@ footer.footer .col-md-3:last-child {
 .input-search a.btn {
     position: absolute;
     bottom: 0;
-    background: url(../images/serch-icon-b.svg) no-repeat;
+    /* background: url(../images/serch-icon-b.svg) no-repeat; */
     width: 40px;
     height: 40px;
     border: 0;
@@ -1444,12 +1444,14 @@ section.home-section-1 blockquote {
 }
 
 section.home-section-2 {
-    background: url(../images/jnu-pic2.webp) no-repeat;
+    /* background: url(../images/jnu-pic2.webp) no-repeat; */
     background-size: cover;
     height: 610px;
     position: relative;
     margin-bottom: 120px
 }
+.banner-content img{display: block;
+    width: 100%;}
 
 .experience {
     padding: 30px 58px 0;
@@ -1485,7 +1487,7 @@ section.home-section-2 {
 
 .experience:before {
     content: "";
-    background: url(../images/frame.svg);
+    /* background: url(../images/frame.svg); */
     width: 200px;
     height: 200px;
     position: absolute;
@@ -3058,7 +3060,7 @@ section.about6 .owl-nav button.owl-next {
 section.about6 .owl-nav button.owl-next span {
     width: 40px;
     height: 40px;
-    background: url(../images/left.svg) no-repeat;
+    /* background: url(../images/left.svg) no-repeat; */
     display: inline-block;
     text-indent: -9999px
 }
@@ -3071,7 +3073,7 @@ section.about6 .owl-nav button.owl-next span {
 section.about6 .owl-nav button.owl-prev span {
     width: 40px;
     height: 40px;
-    background: url(../images/left.svg) no-repeat;
+    /* background: url(../images/left.svg) no-repeat; */
     display: inline-block;
     text-indent: -9999px;
     transform: rotate(180deg)
@@ -3880,7 +3882,7 @@ section.career-prospectus p {
 }
 
 .announcements-accordian div.accordion button.btn.btn-link.collapsed:after {
-    background: #fff url(../images/Path-2.svg) no-repeat;
+    /* background: #fff url(../images/Path-2.svg) no-repeat; */
     width: 37px;
     height: 37px;
     content: "";
@@ -3898,7 +3900,7 @@ section.career-prospectus p {
 }
 
 .announcements-accordian div.accordion button:after {
-    background: #fff url(../images/Path-2.svg) no-repeat;
+    /* background: #fff url(../images/Path-2.svg) no-repeat; */
     width: 37px;
     height: 37px;
     content: "";
@@ -4688,7 +4690,7 @@ section.all-journaels .join {
 
 section.home-section-2:after {
     content: "";
-    background: url(../images/bg-2.svg);
+    /* background: url(../images/bg-2.svg); */
     width: 100%;
     height: 100%;
     position: absolute;
@@ -4927,7 +4929,7 @@ section.apply-admission-for.career-accord .announcements-accordian .card {
 }
 
 section.tell-us:after {
-    background: url(../images/bg-3.svg) no-repeat;
+    /* background: url(../images/bg-3.svg) no-repeat; */
     width: 38%;
     height: 110%;
     content: "";
@@ -10363,7 +10365,7 @@ section.publication-box .table-regulation table {
 }
 
 .faqs .announcements-accordian div.accordion button.btn.btn-link.collapsed:after {
-    background: url(../images/Path-2.svg) no-repeat;
+    /* background: url(../images/Path-2.svg) no-repeat; */
     width: 37px;
     height: 37px;
     content: "";
@@ -10375,7 +10377,7 @@ section.publication-box .table-regulation table {
 }
 
 .faqs .announcements-accordian div.accordion button:after {
-    background: url(../images/Path-2.svg) no-repeat;
+    /* background: url(../images/Path-2.svg) no-repeat; */
     width: 37px;
     height: 37px;
     content: "";
@@ -11453,7 +11455,7 @@ section.student-corner-6 {
 
 .student-corner-text5:before {
     content: "";
-    background: url(../images/frame.svg);
+    /* background: url(../images/frame.svg); */
     width: 200px;
     height: 200px;
     position: absolute;
@@ -11959,7 +11961,7 @@ section.recruiters-panel {
 }
 
 .humburger-menu div#accordion .card .mb-0>a:after {
-    background: #333 url(../images/plus-icon3.png) no-repeat;
+    /* background: #333 url(../images/plus-icon3.png) no-repeat; */
     content: "";
     width: 25px;
     height: 25px;
@@ -11970,7 +11972,7 @@ section.recruiters-panel {
 }
 
 .humburger-menu div#accordion .card .mb-0>a[aria-expanded=true]:after {
-    background: url(../images/minus-icon1.png) no-repeat;
+    /* background: url(../images/minus-icon1.png) no-repeat; */
     content: "";
     width: 25px;
     height: 25px;
@@ -13253,7 +13255,7 @@ section.apply-admission-for.faq_admission .announcements-accordian .card-body {
 }
 
 section.apply-admission-for.faq_admission .announcements-accordian div.accordion a:after {
-    background: url(../images/Path-2.svg) no-repeat;
+    /* background: url(../images/Path-2.svg) no-repeat; */
     width: 37px;
     height: 37px;
     content: "";
@@ -13266,7 +13268,7 @@ section.apply-admission-for.faq_admission .announcements-accordian div.accordion
 }
 
 section.apply-admission-for.faq_admission .announcements-accordian div.accordion a.btn.btn-link.collapsed:after {
-    background: url(../images/Path-2.svg) no-repeat;
+    /* background: url(../images/Path-2.svg) no-repeat; */
     width: 37px;
     height: 37px;
     content: "";
@@ -13278,7 +13280,7 @@ section.apply-admission-for.faq_admission .announcements-accordian div.accordion
 }
 
 section.apply-admission-for.faq_admission .announcements-accordian div.accordion button:after {
-    background: url(../images/Path-2.svg) no-repeat;
+    /* background: url('../Images/Path-2.svg') no-repeat; */
     width: 37px;
     height: 37px;
     content: "";
@@ -13291,7 +13293,7 @@ section.apply-admission-for.faq_admission .announcements-accordian div.accordion
 }
 
 section.apply-admission-for.faq_admission .announcements-accordian div.accordion button.btn.btn-link.collapsed:after {
-    background: url(../images/Path-2.svg) no-repeat;
+    /* background: url('../Images/Path-2.svg') no-repeat; */
     width: 37px;
     height: 37px;
     content: "";
@@ -15061,7 +15063,7 @@ section.apply-admission-for.faq_admission .announcements-accordian div.accordion
 }
 
 section.apply-admission-for.faq_admission .announcements-accordian div.accordion a.btn.btn-link:after {
-    background: url(../images/Path-2.svg) no-repeat;
+    /* background: url(../images/Path-2.svg) no-repeat; */
     width: 37px;
     height: 37px;
     content: "";
@@ -15635,9 +15637,9 @@ a.cont-btn.btn:hover {
     content: "";
     height: 8px;
     border-left: 1px solid #de0b5c;
-    !important;
+    
     border-bottom: 1px solid #de0b5c;
-    !important;
+ 
     -webkit-transform: rotate(-135deg);
     -moz-transform: rotate(-135deg);
     -ms-transform: rotate(-135deg);
